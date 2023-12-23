@@ -1,0 +1,130 @@
+<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+  <mat-card class="sm:mx-auto sm:w-full sm:max-w-md p-3 shadow-md">
+    <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+      <app-logo></app-logo>
+      <h2
+        class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900"
+      >
+        Sign in to your account
+      </h2>
+    </div>
+
+    <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+      <form
+        class="space-y-6"
+        (ngSubmit)="handleSubmit()"
+        [formGroup]="loginData"
+      >
+        <div>
+          <label
+            for="emailOrPhone"
+            class="block text-sm font-medium leading-6 text-gray-900"
+            >Email address or Phone</label
+          >
+          <div class="mt-2">
+            <input
+              id="emailOrPhone"
+              name="emailOrPhone"
+              type="text"
+              autocomplete="emailOrPhone"
+              formControlName="emailOrPhone"
+              [ngClass]="
+                loginData.get('emailOrPhone')?.invalid &&
+                loginData.get('emailOrPhone')?.touched
+                  ? 'focus:ring-red-600'
+                  : 'focus:ring-indigo-500'
+              "
+              class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            />
+            <div
+              *ngIf="
+                loginData.get('emailOrPhone')?.invalid &&
+                loginData.get('emailOrPhone')?.touched
+              "
+              class="text-xs text-red-500 pt-1"
+            >
+              <span *ngIf="loginData.get('emailOrPhone')?.errors?.['required']"
+                >Please enter mail id!</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex items-center justify-between">
+            <label
+              for="password"
+              class="block text-sm font-medium leading-6 text-gray-900"
+              >Password</label
+            >
+            <div class="text-sm">
+              <a
+                routerLink="/auth/forgot-password"
+                class="font-semibold text-indigo-600 hover:text-indigo-500"
+                >Forgot password?</a
+              >
+            </div>
+          </div>
+          <div class="mt-2 relative">
+            <input
+              matInput
+              id="password"
+              name="password"
+              formControlName="password"
+              [type]="hide ? 'password' : 'text'"
+              autocomplete="current-password"
+              [ngClass]="
+                loginData.get('password')?.invalid &&
+                loginData.get('password')?.touched
+                  ? 'focus:ring-red-600'
+                  : 'focus:ring-indigo-500'
+              "
+              class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            />
+            <button
+              class="h-2 w-2 absolute top-0 right-0 px-8 pt-2"
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide"
+            >
+              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+            </button>
+            <div
+              *ngIf="
+                loginData.get('password')?.invalid &&
+                loginData.get('password')?.touched
+              "
+              class="text-xs text-error-red pt-1"
+            >
+              <span *ngIf="loginData.get('password')?.errors?.['required']"
+                >Please provide your password!</span
+              >
+              <span *ngIf="loginData.get('password')?.errors?.['pattern']"
+                >Your password must be 6-20 characters long, contain letters and
+                one uppercase, numbers and special characters!</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <button
+            type="submit"
+            class="flex mt-3 w-full items-center justify-center border border-transparent px-8 py-3 text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+          >
+            Sign in
+          </button>
+        </div>
+      </form>
+
+      <p class="mt-10 text-center text-sm text-gray-500">
+        Don't have an account yet?
+        <a
+          routerLink="/auth/sign-up"
+          class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
+          >Create account</a
+        >
+      </p>
+    </div>
+  </mat-card>
+</div>
