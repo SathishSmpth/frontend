@@ -1,13 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Product } from 'src/app/models/product.interface';
+import {
+  MatDialog,
+  MatDialogRef,
+  MatDialogActions,
+  MatDialogClose,
+  MatDialogTitle,
+  MatDialogContent,
+} from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.scss'],
+  selector: 'app-modal',
+  templateUrl: './modal.component.html',
+  styleUrls: ['./modal.component.scss'],
 })
-export class CartComponent {
-  shoppingCart: Product[] = [
+export class ModalComponent {
+  constructor(
+    public dialogRef: MatDialogRef<ModalComponent>,
+    private dialog: MatDialog,
+    private router:Router
+  ) {}
+  searchResult: Product[] = [
     {
       product_id: 1,
       title: 'string',
@@ -68,11 +82,33 @@ export class CartComponent {
       createdOn: '2023-12-17T21:14:45.946513',
       updatedOn: '2023-12-17T21:14:45.946513',
     },
+    {
+      product_id: 3,
+      title: 'string',
+      description: 'string',
+      category: 'string',
+      images: [
+        'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb',
+        'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb',
+        'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb',
+        'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb',
+      ],
+      thumbnail: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb',
+      price: 0,
+      availableSizes: ['xs', 's', 'm', 'l', 'xl', 'xxl', 'xxxl'],
+      availableColors: ['#fcba03', '#fcba03', '#fcba03'],
+      availableStocks: 10,
+      createdBy: 'string',
+      createdOn: '2023-12-17T21:14:45.946513',
+      updatedOn: '2023-12-17T21:14:45.946513',
+    },
   ];
 
-  constructor() {}
-
-  convertHexToName(hexColor: string) {
-    // return new ColorName(hexColor);
-  }
+  // ngOnInit() {
+  //   this.router.events.subscribe((event) => {
+  //     if (event instanceof NavigationEnd) {
+  //       this.dialog.close();
+  //     }
+  //   });
+  // }
 }

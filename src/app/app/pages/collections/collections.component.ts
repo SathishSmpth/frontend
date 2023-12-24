@@ -13,7 +13,6 @@ export class CollectionsComponent implements OnInit {
   productId!: any;
   constructor(private http: HttpClient, private route: ActivatedRoute) {
     this.productId = this.route.snapshot.params['productId'];
-    console.log(this.productId);
   }
 
   ngOnInit(): void {
@@ -21,7 +20,6 @@ export class CollectionsComponent implements OnInit {
       .get<Product>(`http://localhost:8080/api/v1/products/${this.productId}`)
       .subscribe((res) => {
         this.product = res;
-        console.log(this.product);
       });
   }
 }

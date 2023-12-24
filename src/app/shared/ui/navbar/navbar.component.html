@@ -1,4 +1,4 @@
-<header class="sticky right-0 top-0 left-0 z-50 bg-white">
+<header class="navbar-header bg-white z-50">
   <nav
     class="flex items-center justify-between p-4 lg:px-8 mx-auto lg:max-w-7xl"
     aria-label="Global"
@@ -34,6 +34,11 @@
     </div>
     <div class="hidden md:flex md:gap-x-12">
       <a
+        routerLink="/home"
+        class="text-sm font-semibold leading-6 text-gray-900"
+        >Home</a
+      >
+      <a
         routerLink="/sarees"
         class="text-sm font-semibold leading-6 text-gray-900"
         >Sarees</a
@@ -46,7 +51,7 @@
       >
     </div>
     <div class="hidden md:flex md:flex-1 items-center gap-5 md:justify-end">
-      <button>
+      <button (click)="openDialog('200ms', '150ms')">
         <svg
           class="h-4 w-4"
           stroke-width="1.5"
