@@ -10,8 +10,10 @@
     />
   </form>
   <div class="overflow-x-auto">
-    <app-horizontal-product-card mat-dialog-close class="w-full"
-      [products]="searchResult"
-    ></app-horizontal-product-card>
+    <ul role="list" class="-my-6 divide-y divide-gray-200">
+      <li *ngFor="let product of searchResult">
+        <app-cart-product-card [product]="product" />
+      </li>
+    </ul>
   </div>
 </div>

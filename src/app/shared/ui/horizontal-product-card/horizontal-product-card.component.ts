@@ -7,5 +7,5 @@ import { Product } from 'src/app/models/product.interface';
   styleUrls: ['./horizontal-product-card.component.scss'],
 })
 export class HorizontalProductCardComponent {
-  @Input() products!: Product[];
+  @Input() product!: Product;
 }

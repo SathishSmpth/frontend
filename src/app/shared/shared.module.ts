@@ -21,8 +21,12 @@ import { ModalComponent } from './ui/modal/modal.component';
 import { ProductCardComponent } from './ui/product-card/product-card.component';
 import { ProductListsComponent } from './ui/product-lists/product-lists.component';
 import { ProductOverviewComponent } from './ui/product-overview/product-overview.component';
-import { HorizontalProductCardComponent } from './ui/horizontal-product-card/horizontal-product-card.component';
 import { ResponsiveContainerComponent } from './components/responsive-container/responsive-container.component';
+import { CartProductCardComponent } from './ui/cart-product-card/cart-product-card.component';
+import { HorizontalProductCardComponent } from './ui/horizontal-product-card/horizontal-product-card.component';
+import { FormContainerComponent } from './ui/form/form-container/form-container.component';
+import { MatCardModule } from '@angular/material/card';
+import { CarouselComponent } from './ui/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -36,8 +40,11 @@ import { ResponsiveContainerComponent } from './components/responsive-container/
     ProductCardComponent,
     ProductListsComponent,
     ProductOverviewComponent,
+    ResponsiveContainerComponent,
+    CartProductCardComponent,
     HorizontalProductCardComponent,
-    ResponsiveContainerComponent
+    FormContainerComponent,
+    CarouselComponent,
   ],
   exports: [
     NavbarComponent,
@@ -51,6 +58,8 @@ import { ResponsiveContainerComponent } from './components/responsive-container/
     ProductListsComponent,
     ProductOverviewComponent,
     HorizontalProductCardComponent,
+    FormContainerComponent,
+    CarouselComponent,
   ],
   imports: [
     CommonModule,
@@ -64,6 +73,7 @@ import { ResponsiveContainerComponent } from './components/responsive-container/
     MatIconModule,
     MatSelectModule,
     MatDialogModule,
+    MatCardModule,
   ],
 })
 export class SharedModule {}

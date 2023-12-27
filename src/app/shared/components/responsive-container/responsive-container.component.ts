@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-responsive-container',
+  selector: 'responsive-container',
   templateUrl: './responsive-container.component.html',
   styleUrls: ['./responsive-container.component.scss'],
 })
-export class ResponsiveContainerComponent {}
+export class ResponsiveContainerComponent {
+  @Input() bgImageUrl!:string;
+}
