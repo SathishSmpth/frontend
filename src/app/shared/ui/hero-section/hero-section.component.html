@@ -1,0 +1,30 @@
+<div class="hero-section-wrapper">
+  <img
+    src="{{ product.thumbnail }}"
+    alt="{{ product.title }}"
+    class="hero-section-bg-image"
+  />
+  <div class="hero-section-content-wrapper">
+    <div class="hero-section-content">
+      <h1 class="hero-section-title">{{ product.title | titlecase }}</h1>
+      <!-- <h3 class="hero-section-content-price">Rs.{{product.price}}</h3> -->
+      <p class="hero-section-description">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
+        officia voluptates repellat repellendus possimus rem dolorem, laborum
+        porro veniam nihil. Architecto beatae magni temporibus ipsum illum odio
+        assumenda quo. Magni.
+      </p>
+      <div class="hero-section-button-wrapper">
+        <buy-now-button />
+        <add-to-cart-button />
+      </div>
+    </div>
+    <div class="hero-section-image-wrapper">
+      <img
+        src="{{ product.thumbnail }}"
+        alt="{{ product.title }}"
+        class="hero-section-image"
+      />
+    </div>
+  </div>
+</div>

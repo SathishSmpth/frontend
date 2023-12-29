@@ -1,0 +1,15 @@
+@import "src/app/scss/hover-effects/options";
+@import "src/app/scss/hover-effects/mixins";
+@import "src/app/scss/hover-effects/hacks";
+
+@mixin glow {
+  @include hacks();
+  @include prefixed(transition-duration, $mediumDuration);
+  @include prefixed(transition-property, box-shadow);
+
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: 0 0 8px $shadowColor;
+  }
+}

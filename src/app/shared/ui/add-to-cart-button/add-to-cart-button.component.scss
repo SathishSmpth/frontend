@@ -1,0 +1,9 @@
+@import "src/app/scss/hover-effects/shutter-out-horizontal.scss";
+
+.hvr-shutter-out-horizontal {
+  @include shutter-out-horizontal;
+  background-color: rgb(203 213 225);
+  &:before {
+    background-color: rgb(2 6 23);
+  }
+}

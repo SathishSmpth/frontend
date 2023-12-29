@@ -21,12 +21,13 @@ import { ModalComponent } from './ui/modal/modal.component';
 import { ProductCardComponent } from './ui/product-card/product-card.component';
 import { ProductListsComponent } from './ui/product-lists/product-lists.component';
 import { ProductOverviewComponent } from './ui/product-overview/product-overview.component';
-import { ResponsiveContainerComponent } from './components/responsive-container/responsive-container.component';
+import { ResponsiveContainerComponent } from './ui/responsive-container/responsive-container.component';
 import { CartProductCardComponent } from './ui/cart-product-card/cart-product-card.component';
 import { HorizontalProductCardComponent } from './ui/horizontal-product-card/horizontal-product-card.component';
 import { FormContainerComponent } from './ui/form/form-container/form-container.component';
 import { MatCardModule } from '@angular/material/card';
 import { CarouselComponent } from './ui/carousel/carousel.component';
+import { HeroSectionComponent } from './ui/hero-section/hero-section.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { CarouselComponent } from './ui/carousel/carousel.component';
     HorizontalProductCardComponent,
     FormContainerComponent,
     CarouselComponent,
+    HeroSectionComponent,
   ],
   exports: [
     NavbarComponent,
@@ -60,6 +62,7 @@ import { CarouselComponent } from './ui/carousel/carousel.component';
     HorizontalProductCardComponent,
     FormContainerComponent,
     CarouselComponent,
+    HeroSectionComponent,
   ],
   imports: [
     CommonModule,

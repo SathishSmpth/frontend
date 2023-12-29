@@ -1,0 +1,10 @@
+@import "src/app/scss/hover-effects/underline-from-center.scss";
+@import "src/app/scss/hover-effects/glow.scss";
+
+.hover-effects-product-card {
+  @include glow;
+  @include underline-from-center;
+  &:before {
+    background-color: rgb(79 70 229);
+  }
+}
